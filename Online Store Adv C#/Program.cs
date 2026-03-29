@@ -1,10 +1,218 @@
 ﻿namespace Online_Store_Adv_C_
 {
+    // Product Model
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
+    }
+
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+
+        #region Task 01 : Smart Product Search
+        //public static List<Product> SearchProducts(List<Product> products, Func<Product, bool> filter)
+        //{
+        //    return products.Where(filter).ToList();
+        //}
+        //static void Main(string[] args)
+        //{
+        //    // Product Catalog
+        //    List<Product> catalog = new List<Product>
+        //    {
+        //        new Product { Id = 1, Name = "Laptop", Category = "Electronics", Price = 1200, Stock = 10 },
+        //        new Product { Id = 2, Name = "Phone", Category = "Electronics", Price = 800, Stock = 25 },
+        //        new Product { Id = 3, Name = "T-Shirt", Category = "Clothing", Price = 30, Stock = 100 },
+        //        new Product { Id = 4, Name = "Jeans", Category = "Clothing", Price = 60, Stock = 50 },
+        //        new Product { Id = 5, Name = "Food", Category = "Clothing", Price = 5, Stock = 200 },
+        //        new Product { Id = 6, Name = "Coffe Beans", Category = "Food", Price = 15, Stock = 80 },
+        //        new Product { Id = 7, Name = "C# Book", Category = "Books", Price = 45, Stock = 30 },
+        //        new Product { Id = 8, Name = "Novel", Category = "Books", Price = 20, Stock = 60 },
+        //        new Product { Id = 9, Name = "Headphones", Category = "Electronics", Price = 150, Stock = 40 },
+        //        new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 120, Stock = 15 }
+        //    };
+
+        //    // 1. All Electronics products
+        //    var electronics = SearchProducts(catalog, p => p.Category == "Electronics");
+        //    // 2. Products cheaper than $50
+        //    var cheapProducts = SearchProducts(catalog, p => p.Price < 50);
+
+        //    // 3. Products in stock
+        //    var inStock = SearchProducts(catalog, p => p.Stock > 0);
+
+        //    // 4. Clothing products under $100
+        //    var clothingUnder100 = SearchProducts(catalog, p =>
+        //        p.Category == "Clothing" && p.Price < 100);
+
+        //    // Print Results
+        //    Console.WriteLine("=== Electronics ===");
+        //    PrintProducts(electronics);
+
+        //    Console.WriteLine("\n=== Cheap Products (< $50) ===");
+        //    PrintProducts(cheapProducts);
+
+        //    Console.WriteLine("\n=== In Stock ===");
+        //    PrintProducts(inStock);
+
+        //    Console.WriteLine("\n=== Clothing under $100 ===");
+        //    PrintProducts(clothingUnder100);
+        //}
+
+        //// Helper Method to Print Products
+        //public static void PrintProducts(List<Product> products)
+        //{
+        //    foreach (var p in products)
+        //    {
+        //        Console.WriteLine($"Id: {p.Id}, Name: {p.Name}, Category: {p.Category}, Price: {p.Price}, Stock: {p.Stock}");
+        //    }
+        //} 
+        #endregion
+
+
+        #region Task 03 : (3.1 Print Reports)
+        //public static void PrintReport(List<Product> products, Action<Product> action)
+        //{
+        //    foreach (var product in products)
+        //    {
+        //        action(product);
+        //    }
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    // Product Catalog
+        //    List<Product> catalog = new List<Product>
+        //    {
+        //        new Product { Id = 1, Name = "Laptop", Category = "Electronics", Price = 1200, Stock = 10 },
+        //        new Product { Id = 2, Name = "Phone", Category = "Electronics", Price = 800, Stock = 25 },
+        //        new Product { Id = 3, Name = "T-Shirt", Category = "Clothing", Price = 30, Stock = 100 },
+        //        new Product { Id = 4, Name = "Jeans", Category = "Clothing", Price = 60, Stock = 50 },
+        //        new Product { Id = 5, Name = "Food", Category = "Clothing", Price = 5, Stock = 200 },
+        //        new Product { Id = 6, Name = "Coffe Beans", Category = "Food", Price = 15, Stock = 80 },
+        //        new Product { Id = 7, Name = "C# Book", Category = "Books", Price = 45, Stock = 30 },
+        //        new Product { Id = 8, Name = "Novel", Category = "Books", Price = 20, Stock = 60 },
+        //        new Product { Id = 9, Name = "Headphones", Category = "Electronics", Price = 150, Stock = 40 },
+        //        new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 120, Stock = 15 }
+        //    };
+        //    // Short Report (Scenario 1)
+        //    Console.WriteLine("=== Short Report ===");
+        //    PrintReport(catalog, p =>
+        //    {
+        //        Console.WriteLine($"{p.Name},{p.Price}");
+        //    });
+
+        //    // Detailed Report (Scenario 2)
+        //    Console.WriteLine("\n=== Detailed Report ===");
+        //    PrintReport(catalog, p =>
+        //    {
+        //        Console.WriteLine($"[{p.Category}] {p.Name} | Price: ${p.Price} | Stock: {p.Stock}");
+        //    });
+
+        //} 
+        #endregion
+
+        #region Task 03 : (3.2 Transform Products)
+        //public static List<TResult> TransformProducts<TResult>(List<Product> products, Func<Product, TResult> transformer)
+        //{
+        //    List<TResult> result = new List<TResult>();
+
+        //    foreach (var product in products)
+        //    {
+        //        result.Add(transformer(product));
+        //    }
+
+        //    return result;
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    // Product Catalog
+        //    List<Product> catalog = new List<Product>
+        //        {
+        //            new Product { Id = 1, Name = "Laptop", Category = "Electronics", Price = 1200, Stock = 10 },
+        //            new Product { Id = 2, Name = "Phone", Category = "Electronics", Price = 800, Stock = 25 },
+        //            new Product { Id = 3, Name = "T-Shirt", Category = "Clothing", Price = 30, Stock = 100 },
+        //            new Product { Id = 4, Name = "Jeans", Category = "Clothing", Price = 60, Stock = 50 },
+        //            new Product { Id = 5, Name = "Food", Category = "Clothing", Price = 5, Stock = 200 },
+        //            new Product { Id = 6, Name = "Coffe Beans", Category = "Food", Price = 15, Stock = 80 },
+        //            new Product { Id = 7, Name = "C# Book", Category = "Books", Price = 45, Stock = 30 },
+        //            new Product { Id = 8, Name = "Novel", Category = "Books", Price = 20, Stock = 60 },
+        //            new Product { Id = 9, Name = "Headphones", Category = "Electronics", Price = 150, Stock = 40 },
+        //            new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 120, Stock = 15 }
+        //        };
+
+        //    // Scenario 3
+        //    Console.WriteLine("=== Summary List ===");
+        //    var summary = TransformProducts(catalog, p => $"{p.Name} (${p.Price})");
+
+        //    foreach (var item in summary)
+        //    {
+        //        Console.WriteLine(item);
+        //    }
+
+        //    // Scenario 4
+        //    Console.WriteLine("\n=== Price Labels ===");
+        //    var labels = TransformProducts(catalog, p =>
+        //        p.Price > 100 ? "Expensive!" : "Affordable");
+
+        //    for (int i = 0; i < catalog.Count; i++)
+        //    {
+        //        Console.WriteLine($"{catalog[i].Name}: {labels[i]}");
+        //    }
+        //} 
+        #endregion
+
+        #region Task 03 : (3.3 Filter Products)
+        //public static List<Product> FilterProducts(List<Product> products, Predicate<Product> condition)
+        //{
+        //    List<Product> result = new List<Product>();
+
+        //    foreach (var product in products)
+        //    {
+        //        if (condition(product))
+        //        {
+        //            result.Add(product);
+        //        }
+        //    }
+
+        //    return result;
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    // Product Catalog
+        //    List<Product> catalog = new List<Product>
+        //            {
+        //                new Product { Id = 1, Name = "Laptop", Category = "Electronics", Price = 1200, Stock = 10 },
+        //                new Product { Id = 2, Name = "Phone", Category = "Electronics", Price = 800, Stock = 25 },
+        //                new Product { Id = 3, Name = "T-Shirt", Category = "Clothing", Price = 30, Stock = 100 },
+        //                new Product { Id = 4, Name = "Jeans", Category = "Clothing", Price = 60, Stock = 50 },
+        //                new Product { Id = 5, Name = "Food", Category = "Clothing", Price = 5, Stock = 200 },
+        //                new Product { Id = 6, Name = "Coffe Beans", Category = "Food", Price = 15, Stock = 80 },
+        //                new Product { Id = 7, Name = "C# Book", Category = "Books", Price = 45, Stock = 30 },
+        //                new Product { Id = 8, Name = "Novel", Category = "Books", Price = 20, Stock = 60 },
+        //                new Product { Id = 9, Name = "Headphones", Category = "Electronics", Price = 150, Stock = 40 },
+        //                new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 120, Stock = 15 }
+        //            };
+
+        //    Console.WriteLine("=== Low Stock Alert ===");
+
+        //    var lowStockProducts = FilterProducts(catalog, p => p.Stock < 20);
+
+        //    foreach (var p in lowStockProducts)
+        //    {
+        //        Console.WriteLine($"[LOW STOCK] {p.Name}: only {p.Stock} left!");
+        //    }
+
+        //} 
+        #endregion
+
+
     }
+
+
 }
+
